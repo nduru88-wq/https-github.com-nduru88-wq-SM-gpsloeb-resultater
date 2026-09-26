@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
+<title>GPS-løb – Resultater</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header><div><h1>GPS-løb – Resultater</h1><p>Se elevernes svar og billeder</p></div><span id="loginBadge" class="badge">Ikke logget ind</span></header>
+
+<section id="loginCard" class="card">
+  <div class="label">Lærerlogin</div>
+  <label for="email">E-mail</label><input id="email" class="textInput" type="email" autocomplete="username">
+  <label for="password">Adgangskode</label><input id="password" class="textInput" type="password" autocomplete="current-password">
+  <button id="loginBtn">🔐 Log ind</button>
+  <p id="loginMsg" class="muted"></p>
+</section>
+
+<section id="appCard" class="card" hidden>
+  <div class="topRow"><div><div class="label">Vælg GPS-løb</div><p id="who" class="muted"></p></div><button id="logoutBtn" class="secondary">Log ud</button></div>
+  <select id="raceSelect" class="textInput"><option value="">Vælg løb…</option></select>
+  <button id="refreshBtn" class="secondary">↻ Opdater resultater</button>
+</section>
+
+<section id="summaryCard" class="card" hidden>
+  <div class="progressHead"><strong id="raceHeading">Resultater</strong><span id="participantCount"></span></div>
+  <p class="muted">Klik på en elev/et hold for at se alle svar.</p>
+</section>
+
+<div id="participants"></div>
+</main>
+
+<dialog id="detailDialog">
+  <div class="dialogHead"><div><h2 id="detailTitle"></h2><p id="detailMeta" class="muted"></p></div><button id="closeDialog" class="iconBtn">✕</button></div>
+  <div id="detailBody"></div>
+</dialog>
+
+<script src="script.js"></script>
+</body></html>
